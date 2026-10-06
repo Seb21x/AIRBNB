@@ -52,7 +52,7 @@ Course project for **Sistemes d'Informació en les Organitzacions** (URV, 2026/2
 
 ### Interaction rules
 - **Ask questions with the AskUserQuestion widget**, one decision at a time, with the recommended option first.
-- **Never commit, push, create branches, or open PRs.** The team does all of that, in small commits. Read-only git (`status`, `diff`, `log`) is fine. To review a PR branch, use `git diff main...<branch>` (no `gh` CLI installed).
+- **Do not commit, push, create branches, or open PRs on your own.** The team does that, in small commits. When a user explicitly asks Claude to commit, use exactly the commit messages proposed before. Never push unless asked. Read-only git (`status`, `diff`, `log`) is fine. To review a PR branch, use `git diff main...<branch>` (no `gh` CLI installed).
 - **Commit messages:** after a change, propose a short commit message (one line, English, imperative, e.g. `Add price parsing to clean.py`). **Never add `Co-Authored-By` or any other attribution lines.**
 
 ## Analytical approach
@@ -109,14 +109,14 @@ Raise these **when they become relevant**, preferably as a question ("what do yo
   - All six cities use June 2026 snapshots and lie in the northern hemisphere, so the season is comparable.
   - All files share the same 90-column schema (verified 2026-10-06), so shared `src/` code works for every city.
 
-| Folder | City | Listings | Scraped | Currency | Neighbourhoods with listings (polygons) | Groups |
+| Key (= folder in `data/`) | City | Listings | Scraped | Currency | Neighbourhoods with listings (polygons) | Groups |
 |---|---|---|---|---|---|---|
-| `BARCELONA` | Barcelona | 15,293 | 06-24..07-03 | EUR | 69 (75) | 10 districtes |
-| `LA` | Los Angeles | 43,751 | 06-15..06-23 | USD | 265 (270) | 3 |
-| `MADRID` | Madrid | 22,708 | 06-20..07-02 | EUR | 128 (128) | 21 distritos |
-| `NY` | New York | 30,259 | 06-14..06-23 | USD | 223 (233) | 5 boroughs |
-| `TOKYO` | Tokyo | 34,419 | 06-30..07-03 | JPY | 51 (62) | none |
-| `MEXICO` | Mexico City | 31,430 | 06-16..07-06 | MXN | 16 (16) | none |
+| `barcelona` | Barcelona | 15,293 | 06-24..07-03 | EUR | 69 (75) | 10 districtes |
+| `los_angeles` | Los Angeles | 43,751 | 06-15..06-23 | USD | 265 (270) | 3 |
+| `madrid` | Madrid | 22,708 | 06-20..07-02 | EUR | 128 (128) | 21 distritos |
+| `new_york` | New York | 30,259 | 06-14..06-23 | USD | 223 (233) | 5 boroughs |
+| `tokyo` | Tokyo | 34,419 | 06-30..07-03 | JPY | 51 (62) | none |
+| `mexico_city` | Mexico City | 31,430 | 06-16..07-06 | MXN | 16 (16) | none |
 
 ### Geography
 - **Neighbourhood granularity differs a lot**, from 16 alcaldías in Mexico City to 265 neighbourhoods in LA. Comparing "the most expensive neighbourhood" across cities is therefore not like for like.
@@ -133,11 +133,14 @@ Raise these **when they become relevant**, preferably as a question ("what do yo
 ## Repository layout
 
 ```
-<CITY>/listings.csv.gz              # CITY = BARCELONA, LA, MADRID, NY, TOKYO, MEXICO; pandas reads .gz directly
-<CITY>/neighbourhoods.geojson
-listings_csv_unpcaked/              # local unpacked CSVs, git-ignored, never commit (LA CSV is 122 MB, over GitHub's 100 MB limit)
+data/<city>/listings.csv.gz         # city = key from src/cities.py; pandas reads .gz directly
+data/<city>/neighbourhoods.geojson
+data/unpacked/                      # local unpacked CSVs, git-ignored, never commit (LA CSV is 122 MB, over GitHub's 100 MB limit)
 src/                                # shared Python: loading, cleaning, map helpers (same for all cities)
+pyproject.toml                      # makes src/ installable (pip install -e .)
 notebooks/NN_short_name.ipynb       # one notebook per study
+scratch/                            # personal playground, git-ignored
+README.md                           # short human-facing overview: layout, src/, setup, workflow
 figures/                            # PNG/PDF exported for the report (uploaded to Overleaf)
 maps/                               # interactive folium maps as HTML (go into the ZIP)
 docs/                               # assignment PDFs
@@ -162,18 +165,34 @@ requirements.txt
 - **One branch per study**, merged into `main` through a PR on GitHub (`origin` = `Seb21x/AIRBNB`).
 - Work is split **by study**. Each member does a study end to end (EDA plus its map) on all cities, so both know the full path.
 - **Change `src/` carefully and agree on it,** because both members depend on it.
-- **Environment:** `.venv` (Python 3.13) + `requirements.txt` (pandas, numpy, matplotlib, seaborn, scipy, statsmodels, folium, jupyter, nbstripout).
 - **Report:** LaTeX on Overleaf, written in English. Figures come from `figures/`; maps go in as screenshots, with the HTML files in the ZIP.
 
-## Current state and setup TODO (as of 2026-10-06)
+### Environment and shared code
+- **Environment:** `.venv` (Python 3.13) + `requirements.txt`. `-e .` installs `src/` in editable mode via `pyproject.toml`, so `from src.load import load_listings` works from any notebook.
+- **Setup, once per member and machine** (Windows; on macOS/Linux use `.venv/bin/`):
+  ```
+  python -m venv .venv
+  .venv\Scripts\python -m pip install -r requirements.txt
+  .venv\Scripts\nbstripout --install
+  ```
+  Then select the `.venv` interpreter as the notebook kernel. `nbstripout --install` is per machine because the filter lives in `.git/config`; `.gitattributes` is shared.
+- **`src/` API:**
+  - `src/cities.py`: `CITIES` registry (key → name, currency, pair; the key is also the folder name in `data/`) and `cities_in_pair(n)`. City keys: `barcelona`, `los_angeles`, `madrid`, `new_york`, `tokyo`, `mexico_city`.
+  - `src/load.py`: `load_listings(city, usecols=None)`, which parses `price` to float and adds a `city` column; `load_all(cities=None, usecols=None)`, which concatenates; `load_neighbourhoods(city)`, which returns a GeoJSON dict.
+  - `src/clean.py`: `parse_price(series)`. Further cleaning functions go here once the team has decided on them in a notebook.
+- **pandas 3.x** is installed. Many tutorials online show pandas 1/2.
+  - Text columns have dtype `str`, not `object`.
+  - Copy-on-write is on, so chained assignment like `df["a"][mask] = x` silently does nothing. Use `df.loc[mask, "a"] = x`.
+  - Raise this when the team hits it.
+- Notebooks start with `%load_ext autoreload` / `%autoreload 2`, so changes in `src/` are picked up without a kernel restart.
 
-Update or remove items as they get done.
+## Current state (as of 2026-10-06)
 
-- [x] Restore the `.gz` files, and move the unpacked CSVs to the git-ignored `listings_csv_unpcaked/`.
-- [x] Download all six cities (June 2026 snapshots from https://insideairbnb.com/get-the-data).
-- [ ] Create `.venv` and `requirements.txt`. Extend `.gitignore` (`.venv/`, `__pycache__/`, `.ipynb_checkpoints/`). Run `nbstripout --install`.
-- [ ] Write `src/` loading and cleaning code shared by all cities: a city registry (folder, name, currency, pair) and price parsing.
-- [ ] Replace `main.ipynb`, which is a placeholder, with `notebooks/01_...`.
+Update as things get done.
+
+- [x] Data for all six cities (June 2026 snapshots); all data in `data/<city>/`, and unpacked CSVs in the git-ignored `data/unpacked/`.
+- [x] Environment, `src/` (registry, loaders, `parse_price`) and the `nbstripout` filter.
+- [x] `notebooks/01_first_look.ipynb` skeleton (loads pair 1). **Next:** the team explores the data in it themselves, with Claude asking questions.
 
 ## Timeline (suggested)
 
