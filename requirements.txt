@@ -1,0 +1,13 @@
+# Install with: pip install -r requirements.txt
+pandas>=3.0
+numpy
+matplotlib
+seaborn
+scipy
+statsmodels
+folium
+jupyter
+nbstripout
+
+# Our own code in src/, installed in editable mode (changes are picked up without reinstalling)
+-e .
