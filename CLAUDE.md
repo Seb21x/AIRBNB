@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-Course project for **Sistemes d'Informació en les Organitzacions** (URV, 2026/27): *Pràctica 1 – El poder de les dades: El cas Airbnb*. Two-person team. The assignment is in [docs/Enunciat_P1.pdf](docs/Enunciat_P1.pdf) (original, Catalan) and [docs/Cw 1 - AirBnb.pdf](docs/Cw%201%20-%20AirBnb.pdf) (Polish translation).
+Course project for **Sistemes d'Informació en les Organitzacions** (URV, 2026/27): *Pràctica 1 – El poder de les dades: El cas Airbnb*. Two-person team. The assignment is in [docs/Enunciat_P1.pdf](docs/Enunciat_P1.pdf) (original, Catalan) and [docs/Cw1_AirBnb.pdf](docs/Cw1_AirBnb.pdf) (Polish translation).
 
 **The main goal is learning.** The team wants to learn data analysis by doing this project *with* Claude, not to have Claude do it for them. Every rule below serves that goal.
 
