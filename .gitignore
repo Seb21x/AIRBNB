@@ -1,1 +1,13 @@
-listings_csv_unpcaked
+# Local unpacked CSVs (too big for GitHub, pandas reads .gz directly)
+data/unpacked/
+
+# Python environment and caches
+.venv/
+__pycache__/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Personal playground
+scratch/
