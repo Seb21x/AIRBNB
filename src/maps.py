@@ -5,7 +5,7 @@ from pathlib import Path
 import branca.colormap as cm
 import folium
 import pandas as pd
-from folium.plugins import HeatMap
+from folium.plugins import FastMarkerCluster, HeatMap, HeatMapWithTime
 
 from src.load import load_neighbourhoods
 
@@ -155,3 +155,66 @@ def save_map(m: folium.Map, filename: str) -> Path:
     path = MAPS_DIR / filename
     m.save(path)
     return path
+
+
+def _text_color(hex_color: str) -> str:
+    """Black or white, whichever is easier to read on `hex_color` (by its relative luminance)."""
+    r, g, b = (int(hex_color[i:i + 2], 16) / 255 for i in (1, 3, 5))
+    return "black" if 0.2126 * r + 0.7152 * g + 0.0722 * b > 0.5 else "white"
+
+
+def add_category_points(
+    m: folium.Map,
+    df: pd.DataFrame,
+    category: str,
+    colors: dict,
+    label: str,
+    name_prefix: str = "",
+    show: list | None = None,
+) -> None:
+    """Categorical point map: one layer per category, each listing a small circle in its category's colour.
+
+    `colors` maps each category of the `category` column (in display order) to a colour. Points are grouped
+    into clusters that split up when zooming in (FastMarkerCluster draws the points in the browser, so
+    maps with tens of thousands of listings stay small and fast); a cluster shows the number of listings
+    in it and has the colour of its layer. Hovering a point shows the `label` column. Only the categories
+    in `show` are switched on when the map opens.
+    """
+    show = show or []
+    for cat, color in colors.items():
+        points = df.loc[df[category] == cat, ["latitude", "longitude", label]]
+        points = points.assign(latitude=points["latitude"].round(5), longitude=points["longitude"].round(5),
+                               **{label: points[label].astype(str)})
+        callback = f"""function (row) {{
+            var marker = L.circleMarker(new L.LatLng(row[0], row[1]),
+                {{radius: 5, color: "white", weight: 1, fillColor: "{color}", fillOpacity: 0.9}});
+            marker.bindTooltip(row[2]);
+            return marker;
+        }}"""
+        icon = f"""function (cluster) {{
+            var n = cluster.getChildCount();
+            var size = n < 100 ? 28 : (n < 1000 ? 36 : 44);
+            return L.divIcon({{
+                html: '<div style="background:{color};color:{_text_color(color)};width:' + size + 'px;height:' + size
+                      + 'px;box-sizing:border-box;border-radius:50%;border:2px solid white;display:flex;'
+                      + 'align-items:center;justify-content:center;font:12px sans-serif;opacity:0.9">' + n + '</div>',
+                className: "", iconSize: L.point(size, size)}});
+        }}"""
+        # FastMarkerCluster always adds itself to its parent, so it sits in a FeatureGroup, which the layer
+        # control can switch on and off (and which respects `show`)
+        layer = folium.FeatureGroup(name=f"{name_prefix}{cat} ({len(points):,} listings)", show=cat in show)
+        FastMarkerCluster(points.values.tolist(), callback=callback, icon_create_function=icon,
+                          control=False).add_to(layer)
+        layer.add_to(m)
+
+
+def add_heatmap_over_time(m: folium.Map, df: pd.DataFrame, period: str, name: str, radius: int = 8) -> None:
+    """Animated heat map: one frame per value of the `period` column (e.g. entry year), with a time slider.
+
+    Each frame shows only the listings of that period, so the animation shows where new listings appeared
+    period by period. The slider and the play button sit in the bottom-left corner.
+    """
+    periods = sorted(df[period].dropna().unique())
+    frames = [df.loc[df[period] == p, ["latitude", "longitude"]].round(5).values.tolist() for p in periods]
+    HeatMapWithTime(frames, index=[str(int(p)) for p in periods], name=name, radius=radius,
+                    min_opacity=0.2, max_opacity=0.8, auto_play=False).add_to(m)
