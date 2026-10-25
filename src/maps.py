@@ -45,15 +45,19 @@ def add_choropleth(
     fmt: str = "{:.1f}%",
     min_count: int = 20,
     colors: list[str] = BLUES,
+    colormap: cm.LinearColormap | None = None,
 ) -> None:
     """Colour the neighbourhood polygons of `city` by `values` (a Series indexed by neighbourhood name).
 
     `counts` is the number of listings per neighbourhood. Neighbourhoods with fewer than `min_count` listings
     (or none) are drawn grey, because a share computed from a handful of listings is mostly noise.
     Hovering shows a tooltip, and clicking opens a popup with the same details.
+    By default the colours run from the lowest to the highest value; pass `colormap` for another scale
+    (e.g. a diverging one from `diverging_colormap`).
     """
     reliable = values[counts.reindex(values.index).fillna(0) >= min_count].dropna()
-    colormap = cm.LinearColormap(colors, vmin=reliable.min(), vmax=reliable.max(), caption=legend)
+    if colormap is None:
+        colormap = cm.LinearColormap(colors, vmin=reliable.min(), vmax=reliable.max(), caption=legend)
 
     # Copy the GeoJSON and write the value and listing count into each polygon's properties for the tooltip
     geojson = copy.deepcopy(load_neighbourhoods(city))
@@ -89,10 +93,59 @@ def add_choropleth(
     colormap.add_to(m)
 
 
-def add_heatmap(m: folium.Map, df: pd.DataFrame, name: str, show: bool = False) -> None:
-    """Heat map of listing density from the coordinates in `df`, as a layer that can be switched on and off."""
-    points = df[["latitude", "longitude"]].round(5).values.tolist()
-    HeatMap(points, name=name, show=show, radius=10, blur=12, min_opacity=0.3).add_to(m)
+def diverging_colormap(max_ratio: float, caption: str) -> cm.LinearColormap:
+    """Blue-grey-red scale for a ratio centred on 1: blue below 1, neutral grey at 1, red above 1.
+
+    The scale runs from 1 / max_ratio to max_ratio, so that e.g. 0.5 and 2 are equally far from the centre.
+    """
+    index = [1 / max_ratio, 1 / max_ratio**0.5, 1, max_ratio**0.5, max_ratio]
+    return cm.LinearColormap(
+        ["#1c5cab", "#86b6ef", "#f0efec", "#ef9a99", "#c23b3a"], index=index,
+        vmin=index[0], vmax=index[-1], caption=caption,
+    )
+
+
+def add_heatmap(m: folium.Map, df: pd.DataFrame, name: str, show: bool = False, weight: str | None = None) -> None:
+    """Heat map of the points in `df`, as a layer that can be switched on and off.
+
+    Without `weight` every listing counts once (supply density); with `weight` (a column name) each listing
+    counts with that value, e.g. its number of reviews (demand density).
+    """
+    points = df[["latitude", "longitude"]].round(5)
+    if weight:
+        # Leaflet treats an intensity of 1 as the maximum, so weights are scaled to 0-1 by the 99th percentile
+        points["w"] = (df[weight] / df[weight].quantile(0.99)).clip(upper=1).round(3)
+    HeatMap(points.values.tolist(), name=name, show=show, radius=10, blur=12, min_opacity=0.3).add_to(m)
+
+
+def add_bubbles(
+    m: folium.Map,
+    data: pd.DataFrame,
+    size: str,
+    value: str,
+    colormap: cm.LinearColormap,
+    name: str,
+    label: str = "neighbourhood",
+    fmt: str = "{:.2f}",
+    max_radius: int = 25,
+    show: bool = False,
+) -> None:
+    """Bubble map: one circle per row of `data` (needs `latitude` and `longitude` columns).
+
+    The circle area grows with the `size` column, and the colour shows the `value` column on `colormap`.
+    Clicking a circle opens a popup with the label, size and value.
+    """
+    layer = folium.FeatureGroup(name=name, show=show)
+    for _, row in data.iterrows():
+        folium.CircleMarker(
+            location=[row["latitude"], row["longitude"]],
+            radius=max_radius * (row[size] / data[size].max()) ** 0.5,  # radius ~ sqrt, so the area ~ size
+            color="white", weight=1,
+            fill=True, fill_color=colormap(row[value]), fill_opacity=0.85,
+            tooltip=f"{row[label]}: {fmt.format(row[value])}",
+            popup=folium.Popup(f"<b>{row[label]}</b><br>{size}: {row[size]:,.0f}<br>{value}: {fmt.format(row[value])}", max_width=250),
+        ).add_to(layer)
+    layer.add_to(m)
 
 
 def save_map(m: folium.Map, filename: str) -> Path:
