@@ -1,0 +1,25 @@
+City,Currency,Room Type,Listings Count,Market Share (%),Median Price,Mean Price,Std Dev (s),IQR
+Barcelona,EUR,Entire home/apt,10114,75.7,221.5,284.77,373.14,188.0
+Barcelona,EUR,Private room,3082,23.1,64.0,100.74,121.54,92.62
+Barcelona,EUR,Hotel room,62,0.5,196.1,252.49,147.19,91.79
+Barcelona,EUR,Shared room,97,0.7,46.0,73.97,116.59,23.0
+Los Angeles,USD,Entire home/apt,28437,74.5,282.0,463.59,736.33,314.82
+Los Angeles,USD,Private room,9069,23.7,85.37,135.77,240.59,82.77
+Los Angeles,USD,Hotel room,400,1.0,319.19,511.52,498.54,361.52
+Los Angeles,USD,Shared room,280,0.7,36.82,76.25,229.57,24.31
+Madrid,EUR,Entire home/apt,13936,72.7,144.0,202.8,553.57,98.0
+Madrid,EUR,Private room,5065,26.4,64.0,121.21,563.97,57.36
+Madrid,EUR,Hotel room,29,0.2,104.0,107.7,40.52,40.0
+Madrid,EUR,Shared room,142,0.7,25.0,62.0,272.66,20.0
+New York,USD,Entire home/apt,11537,53.6,222.87,331.41,534.75,210.47
+New York,USD,Private room,9306,43.3,102.96,191.78,448.62,134.08
+New York,USD,Hotel room,480,2.2,447.0,721.57,1202.96,498.11
+New York,USD,Shared room,192,0.9,54.66,164.39,315.84,105.56
+Tokyo,JPY,Entire home/apt,27150,83.9,20537.16,32124.0,65990.6,17005.0
+Tokyo,JPY,Private room,4787,14.8,15000.0,26838.11,62662.63,14600.0
+Tokyo,JPY,Hotel room,112,0.3,11155.34,31567.57,131531.3,14984.25
+Tokyo,JPY,Shared room,312,1.0,3424.0,5613.19,11635.78,2851.32
+Mexico City,MXN,Entire home/apt,19856,67.0,2163.0,3472.76,7696.42,1872.81
+Mexico City,MXN,Private room,9407,31.7,970.0,1758.79,12258.47,932.16
+Mexico City,MXN,Hotel room,83,0.3,3132.0,7594.79,8690.77,8523.0
+Mexico City,MXN,Shared room,291,1.0,503.0,765.4,1116.28,335.82

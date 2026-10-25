@@ -1,0 +1,40 @@
+city_name,neighbourhood_group_cleansed,listings,monthly_pct
+Barcelona,Eixample,5835,28.3
+Barcelona,Sants-Montjuïc,1448,31.0
+Barcelona,Sant Martí,1436,35.0
+Barcelona,Gràcia,1366,36.4
+Barcelona,Les Corts,327,36.7
+Barcelona,Nou Barris,163,38.7
+Barcelona,Horta-Guinardó,358,46.9
+Barcelona,Sant Andreu,225,47.1
+Barcelona,Ciutat Vella,3247,50.9
+Barcelona,Sarrià-Sant Gervasi,888,51.9
+Los Angeles,Unincorporated Areas,4081,9.2
+Los Angeles,Other Cities,17960,22.2
+Los Angeles,City of Los Angeles,21710,74.2
+Madrid,Villa de Vallecas,102,1.0
+Madrid,Moratalaz,142,2.1
+Madrid,San Blas - Canillejas,468,3.8
+Madrid,Barajas,170,4.1
+Madrid,Puente de Vallecas,661,4.1
+Madrid,Villaverde,241,4.1
+Madrid,Ciudad Lineal,743,5.0
+Madrid,Usera,474,5.1
+Madrid,Carabanchel,750,7.2
+Madrid,Latina,510,7.3
+Madrid,Fuencarral - El Pardo,291,7.6
+Madrid,Centro,9470,9.8
+Madrid,Arganzuela,1149,10.3
+Madrid,Hortaleza,481,11.6
+Madrid,Tetuán,1623,15.9
+Madrid,Chamartín,800,16.0
+Madrid,Moncloa - Aravaca,651,16.9
+Madrid,Vicálvaro,65,18.5
+Madrid,Retiro,813,20.8
+Madrid,Salamanca,1591,23.0
+Madrid,Chamberí,1513,25.6
+New York,Manhattan,13709,78.6
+New York,Queens,4680,81.8
+New York,Staten Island,332,83.7
+New York,Bronx,976,85.0
+New York,Brooklyn,10562,85.2

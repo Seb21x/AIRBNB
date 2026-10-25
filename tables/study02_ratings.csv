@@ -1,0 +1,3 @@
+metric,n_single,n_mega,median_single,median_mega,U,p_value,prob_superiority
+review_scores_cleanliness,38812,69848,4.88,4.8,1576024771.0,0.0,0.5813571809550429
+review_scores_communication,38809,69848,4.97,4.89,1716674457.5,0.0,0.6332883776497085

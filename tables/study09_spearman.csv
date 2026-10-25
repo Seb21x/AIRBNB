@@ -1,0 +1,5 @@
+city,sample,n,rho,p_value
+barcelona,All eligible,6801,-0.05856661151637489,1.3439451458580307e-06
+barcelona,First review at least one year earlier,5185,-0.11645239164249983,4.03104474559202e-17
+madrid,All eligible,12255,-0.011264229422425913,0.2124383834094158
+madrid,First review at least one year earlier,8754,-0.004698689177857212,0.6602542050470964

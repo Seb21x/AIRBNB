@@ -11,3 +11,11 @@ __pycache__/
 
 # Personal playground
 scratch/
+
+# Local OS files and generated build intermediates
+.DS_Store
+report/*.aux
+report/*.log
+report/*.out
+report/*.toc
+deliverables/*.zip

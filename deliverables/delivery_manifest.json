@@ -1,0 +1,13 @@
+{
+  "archive_name": "airbnb_submission.zip",
+  "archive_size_bytes": 134945060,
+  "archive_sha256": "954f178eea1a6effcde40b5b22a0f8b82b4c2137cb4f57cbcf8cc7c76aa5ddbe",
+  "files_count": 138,
+  "total_uncompressed_bytes": 185079003,
+  "total_compressed_bytes": 134925904,
+  "pdf_report": {
+    "path": "report/report.pdf",
+    "size_bytes": 3501391,
+    "sha256": "e94bd130a422b70c0deab351c035048262e8d457c57c2ba496ca41018004bc38"
+  }
+}

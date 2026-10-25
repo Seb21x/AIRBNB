@@ -1,0 +1,198 @@
+city,neighbourhood_cleansed,listings,short_entire,share_pct,small_sample
+barcelona,Can Baró,34,17,50.0,False
+barcelona,Ciutat Meridiana,1,0,0.0,True
+barcelona,Diagonal Mar i el Front Marítim del Poblenou,119,77,64.70588235294117,False
+barcelona,Horta,12,4,33.333333333333336,True
+barcelona,Hostafrancs,176,94,53.40909090909091,False
+barcelona,Montbau,6,0,0.0,True
+barcelona,Navas,61,18,29.508196721311474,False
+barcelona,Pedralbes,28,3,10.714285714285714,False
+barcelona,Porta,18,4,22.22222222222222,True
+barcelona,Provençals del Poblenou,84,39,46.42857142857143,False
+barcelona,Sant Andreu,73,24,32.87671232876713,False
+barcelona,Sant Antoni,846,494,58.392434988179666,False
+barcelona,Sant Genís dels Agudells,5,1,20.0,True
+barcelona,Sant Gervasi - Galvany,448,153,34.151785714285715,False
+barcelona,Sant Gervasi - la Bonanova,84,27,32.142857142857146,False
+barcelona,Sant Martí de Provençals,35,11,31.428571428571427,False
+barcelona,"Sant Pere, Santa Caterina i la Ribera",925,300,32.432432432432435,False
+barcelona,Sants,266,148,55.6390977443609,False
+barcelona,Sants - Badal,149,47,31.543624161073826,False
+barcelona,Sarrià,67,16,23.880597014925375,False
+barcelona,Torre Baró,1,0,0.0,True
+barcelona,Vallcarca i els Penitents,77,24,31.16883116883117,False
+barcelona,"Vallvidrera, el Tibidabo i les Planes",30,5,16.666666666666668,False
+barcelona,Verdun,4,1,25.0,True
+barcelona,Vilapicina i la Torre Llobeta,79,57,72.15189873417721,False
+barcelona,el Baix Guinardó,89,42,47.19101123595506,False
+barcelona,el Barri Gòtic,881,266,30.192962542565265,False
+barcelona,el Besòs i el Maresme,100,39,39.0,False
+barcelona,el Bon Pastor,8,2,25.0,True
+barcelona,el Camp d'en Grassot i Gràcia Nova,257,131,50.97276264591439,False
+barcelona,el Camp de l'Arpa del Clot,258,126,48.83720930232558,False
+barcelona,el Carmel,64,28,43.75,False
+barcelona,el Clot,80,29,36.25,False
+barcelona,el Coll,27,13,48.148148148148145,False
+barcelona,el Congrés i els Indians,41,12,29.26829268292683,False
+barcelona,el Fort Pienc,424,241,56.839622641509436,False
+barcelona,el Guinardó,102,43,42.15686274509804,False
+barcelona,el Parc i la Llacuna del Poblenou,161,91,56.52173913043478,False
+barcelona,el Poble Sec,650,425,65.38461538461539,False
+barcelona,el Poblenou,437,247,56.52173913043478,False
+barcelona,el Putxet i el Farró,203,101,49.75369458128079,False
+barcelona,el Raval,1031,216,20.950533462657614,False
+barcelona,el Turó de la Peira,15,1,6.666666666666667,True
+barcelona,l'Antiga Esquerra de l'Eixample,850,396,46.588235294117645,False
+barcelona,la Barceloneta,410,93,22.682926829268293,False
+barcelona,la Bordeta,72,30,41.666666666666664,False
+barcelona,la Clota,4,0,0.0,True
+barcelona,la Dreta de l'Eixample,2145,1153,53.752913752913756,False
+barcelona,la Font d'en Fargues,22,4,18.181818181818183,False
+barcelona,la Font de la Guatlla,70,34,48.57142857142857,False
+barcelona,la Guineueta,13,1,7.6923076923076925,True
+barcelona,la Marina de Port,62,6,9.67741935483871,False
+barcelona,la Marina del Prat Vermell,3,2,66.66666666666667,True
+barcelona,la Maternitat i Sant Ramon,70,35,50.0,False
+barcelona,la Nova Esquerra de l'Eixample,660,372,56.36363636363637,False
+barcelona,la Prosperitat,16,1,6.25,True
+barcelona,la Sagrada Família,910,581,63.84615384615385,False
+barcelona,la Sagrera,39,10,25.641025641025642,False
+barcelona,la Salut,81,22,27.160493827160494,False
+barcelona,la Teixonera,13,1,7.6923076923076925,True
+barcelona,la Trinitat Nova,3,0,0.0,True
+barcelona,la Trinitat Vella,3,0,0.0,True
+barcelona,la Vall d'Hebron,7,1,14.285714285714286,True
+barcelona,la Verneda i la Pau,27,7,25.925925925925927,False
+barcelona,la Vila Olímpica del Poblenou,135,75,55.55555555555556,False
+barcelona,la Vila de Gràcia,924,488,52.81385281385281,False
+barcelona,les Corts,229,116,50.65502183406114,False
+barcelona,les Roquetes,13,2,15.384615384615385,True
+barcelona,les Tres Torres,56,22,39.285714285714285,False
+madrid,Abrantes,45,13,28.88888888888889,False
+madrid,Acacias,198,116,58.58585858585859,False
+madrid,Adelfas,130,91,70.0,False
+madrid,Aeropuerto,11,3,27.272727272727273,True
+madrid,Aguilas,49,6,12.244897959183673,False
+madrid,Alameda de Osuna,33,8,24.242424242424242,False
+madrid,Almagro,223,116,52.01793721973094,False
+madrid,Almenara,185,122,65.94594594594595,False
+madrid,Almendrales,105,75,71.42857142857143,False
+madrid,Aluche,61,23,37.704918032786885,False
+madrid,Ambroz,14,4,28.571428571428573,True
+madrid,Amposta,13,3,23.076923076923077,True
+madrid,Apostol Santiago,34,7,20.58823529411765,False
+madrid,Arapiles,230,135,58.69565217391305,False
+madrid,Aravaca,48,34,70.83333333333333,False
+madrid,Arcos,46,9,19.565217391304348,False
+madrid,Argüelles,325,153,47.07692307692308,False
+madrid,Atalaya,1,0,0.0,True
+madrid,Atocha,52,38,73.07692307692308,False
+madrid,Bellas Vistas,235,145,61.702127659574465,False
+madrid,Berruguete,222,129,58.108108108108105,False
+madrid,Buenavista,49,12,24.489795918367346,False
+madrid,Butarque,26,6,23.076923076923077,False
+madrid,Campamento,25,4,16.0,False
+madrid,Canillas,137,54,39.416058394160586,False
+madrid,Canillejas,95,44,46.31578947368421,False
+madrid,Casa de Campo,96,32,33.333333333333336,False
+madrid,Casco Histórico de Barajas,49,25,51.02040816326531,False
+madrid,Casco Histórico de Vallecas,93,62,66.66666666666667,False
+madrid,Casco Histórico de Vicálvaro,51,12,23.529411764705884,False
+madrid,Castellana,179,114,63.687150837988824,False
+madrid,Castilla,85,50,58.8235294117647,False
+madrid,Castillejos,287,159,55.400696864111495,False
+madrid,Chopera,134,77,57.46268656716418,False
+madrid,Ciudad Jardín,100,67,67.0,False
+madrid,Ciudad Universitaria,80,34,42.5,False
+madrid,Colina,23,15,65.21739130434783,False
+madrid,Comillas,130,88,67.6923076923077,False
+madrid,Concepción,86,50,58.13953488372093,False
+madrid,Corralejos,16,9,56.25,True
+madrid,Cortes,1030,734,71.2621359223301,False
+madrid,Costillares,30,27,90.0,False
+madrid,Cuatro Caminos,470,252,53.61702127659574,False
+madrid,Cuatro Vientos,6,2,33.333333333333336,True
+madrid,Cármenes,49,22,44.89795918367347,False
+madrid,Delicias,172,88,51.16279069767442,False
+madrid,El Goloso,8,6,75.0,True
+madrid,El Pardo,2,1,50.0,True
+madrid,El Plantío,19,4,21.05263157894737,True
+madrid,El Viso,88,43,48.86363636363637,False
+madrid,Embajadores,2453,1714,69.87362413371382,False
+madrid,Entrevías,60,21,35.0,False
+madrid,Estrella,36,16,44.44444444444444,False
+madrid,Fontarrón,59,11,18.64406779661017,False
+madrid,Fuente del Berro,142,92,64.78873239436619,False
+madrid,Fuentelareina,5,4,80.0,True
+madrid,Gaztambide,237,100,42.19409282700422,False
+madrid,Goya,367,214,58.310626702997276,False
+madrid,Guindalera,390,266,68.2051282051282,False
+madrid,Hellín,13,4,30.76923076923077,True
+madrid,Hispanoamérica,126,64,50.79365079365079,False
+madrid,Horcajo,4,0,0.0,True
+madrid,Ibiza,227,105,46.25550660792952,False
+madrid,Imperial,180,119,66.11111111111111,False
+madrid,Jerónimos,89,53,59.550561797752806,False
+madrid,Justicia,1120,768,68.57142857142857,False
+madrid,La Paz,26,12,46.15384615384615,False
+madrid,Legazpi,44,35,79.54545454545455,False
+madrid,Lista,206,118,57.28155339805825,False
+madrid,Los Angeles,52,9,17.307692307692307,False
+madrid,Los Rosales,46,25,54.34782608695652,False
+madrid,Lucero,78,34,43.58974358974359,False
+madrid,Marroquina,17,8,47.05882352941177,True
+madrid,Media Legua,21,3,14.285714285714286,False
+madrid,Mirasierra,20,8,40.0,False
+madrid,Moscardó,132,76,57.57575757575758,False
+madrid,Niño Jesús,61,37,60.65573770491803,False
+madrid,Nueva España,164,114,69.51219512195122,False
+madrid,Numancia,219,131,59.817351598173516,False
+madrid,Opañel,146,93,63.6986301369863,False
+madrid,Orcasitas,22,11,50.0,False
+madrid,Orcasur,66,51,77.27272727272727,False
+madrid,Pacífico,270,134,49.629629629629626,False
+madrid,Palacio,1681,1166,69.36347412254611,False
+madrid,Palomas,5,3,60.0,True
+madrid,Palomeras Bajas,46,23,50.0,False
+madrid,Palomeras Sureste,49,22,44.89795918367347,False
+madrid,Palos de Moguer,369,243,65.85365853658537,False
+madrid,Pavones,7,2,28.571428571428573,True
+madrid,Peñagrande,59,25,42.3728813559322,False
+madrid,Pilar,60,38,63.333333333333336,False
+madrid,Pinar del Rey,131,76,58.01526717557252,False
+madrid,Piovera,30,19,63.333333333333336,False
+madrid,Portazgo,43,16,37.2093023255814,False
+madrid,Pradolongo,52,27,51.92307692307692,False
+madrid,Prosperidad,237,165,69.62025316455696,False
+madrid,Pueblo Nuevo,220,121,55.0,False
+madrid,Puerta Bonita,79,40,50.63291139240506,False
+madrid,Puerta del Angel,242,131,54.13223140495868,False
+madrid,Quintana,100,56,56.0,False
+madrid,Recoletos,307,205,66.77524429967427,False
+madrid,Rejas,144,115,79.86111111111111,False
+madrid,Rios Rosas,251,102,40.63745019920319,False
+madrid,Rosas,39,12,30.76923076923077,False
+madrid,Salvador,20,12,60.0,False
+madrid,San Andrés,97,72,74.22680412371135,False
+madrid,San Cristobal,20,4,20.0,False
+madrid,San Diego,244,185,75.81967213114754,False
+madrid,San Fermín,50,15,30.0,False
+madrid,San Isidro,191,130,68.06282722513089,False
+madrid,San Juan Bautista,29,22,75.86206896551724,False
+madrid,San Pascual,38,21,55.26315789473684,False
+madrid,Santa Eugenia,9,5,55.55555555555556,True
+madrid,Simancas,98,58,59.183673469387756,False
+madrid,Sol,1240,868,70.0,False
+madrid,Timón,61,26,42.622950819672134,False
+madrid,Trafalgar,463,233,50.323974082073434,False
+madrid,Universidad,1946,1300,66.80369989722507,False
+madrid,Valdeacederas,224,130,58.035714285714285,False
+madrid,Valdefuentes,144,88,61.111111111111114,False
+madrid,Valdemarín,12,3,25.0,True
+madrid,Valdezarza,71,40,56.33802816901409,False
+madrid,Vallehermoso,109,72,66.05504587155963,False
+madrid,Valverde,111,54,48.648648648648646,False
+madrid,Ventas,216,120,55.55555555555556,False
+madrid,Vinateros,34,4,11.764705882352942,False
+madrid,Vista Alegre,110,42,38.18181818181818,False
+madrid,Zofío,47,19,40.42553191489362,False

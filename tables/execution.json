@@ -1,0 +1,56 @@
+[
+  {
+    "notebook": "01_first_look.ipynb",
+    "status": "passed",
+    "seconds": 2.5,
+    "code_cells": 4
+  },
+  {
+    "notebook": "02_host_economy.ipynb",
+    "status": "passed",
+    "seconds": 4.0,
+    "code_cells": 8
+  },
+  {
+    "notebook": "03_price_distribution.ipynb",
+    "status": "passed",
+    "seconds": 3.68,
+    "code_cells": 8
+  },
+  {
+    "notebook": "04_room_type_price.ipynb",
+    "status": "passed",
+    "seconds": 3.95,
+    "code_cells": 8
+  },
+  {
+    "notebook": "05_rental_model.ipynb",
+    "status": "passed",
+    "seconds": 6.04,
+    "code_cells": 21
+  },
+  {
+    "notebook": "06_short_stay_geography.ipynb",
+    "status": "passed",
+    "seconds": 1.45,
+    "code_cells": 3
+  },
+  {
+    "notebook": "07_monthly_stay_cost.ipynb",
+    "status": "passed",
+    "seconds": 1.59,
+    "code_cells": 3
+  },
+  {
+    "notebook": "08_price_regression.ipynb",
+    "status": "passed",
+    "seconds": 1.71,
+    "code_cells": 3
+  },
+  {
+    "notebook": "09_price_guest_activity.ipynb",
+    "status": "passed",
+    "seconds": 1.62,
+    "code_cells": 3
+  }
+]

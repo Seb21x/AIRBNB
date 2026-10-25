@@ -1,0 +1,7 @@
+Metric,Barcelona,Madrid,Difference (BCN vs MAD)
+Number of listings,"13,355","19,172","-5,817"
+Median Price (€),€177.67,€125.00,+€52.67 (+42.1%)
+Mean Price (€),€240.62,€180.06,+€60.56 (+33.6%)
+Interquartile Range - IQR (€),€196.21,€100.25,+€95.96
+Upper Outlier Fence (€),€579.82,€334.38,+€245.43
+Mann-Whitney U Test,"U = 155,985,046",p = 5.17e-247,"Two-sided test, p = 5.17e-247"

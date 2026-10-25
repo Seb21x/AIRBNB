@@ -1,0 +1,19 @@
+city_name,rental_model,n,median_reviews_ltm
+Barcelona,Short stay (1-6 nights),9233,13.0
+Barcelona,Weekly (7-29),386,0.0
+Barcelona,Monthly+ (30+),5673,0.0
+Los Angeles,Short stay (1-6 nights),21742,9.0
+Los Angeles,Weekly (7-29),1517,0.0
+Los Angeles,Monthly+ (30+),20481,0.0
+Madrid,Short stay (1-6 nights),17937,10.0
+Madrid,Weekly (7-29),1992,2.0
+Madrid,Monthly+ (30+),2777,0.0
+New York,Short stay (1-6 nights),5456,13.0
+New York,Weekly (7-29),84,1.0
+New York,Monthly+ (30+),24717,0.0
+Tokyo,Short stay (1-6 nights),29836,11.0
+Tokyo,Weekly (7-29),457,1.0
+Tokyo,Monthly+ (30+),4123,0.0
+Mexico City,Short stay (1-6 nights),30189,7.0
+Mexico City,Weekly (7-29),857,0.0
+Mexico City,Monthly+ (30+),373,0.0

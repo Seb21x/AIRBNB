@@ -1,0 +1,84 @@
+{
+  "overall_status": "PASSED",
+  "checks": {
+    "notebook_execution": {
+      "passed": true,
+      "total_executed": 9,
+      "passed_notebooks": [
+        "01_first_look.ipynb",
+        "02_host_economy.ipynb",
+        "03_price_distribution.ipynb",
+        "04_room_type_price.ipynb",
+        "05_rental_model.ipynb",
+        "06_short_stay_geography.ipynb",
+        "07_monthly_stay_cost.ipynb",
+        "08_price_regression.ipynb",
+        "09_price_guest_activity.ipynb"
+      ]
+    },
+    "tables": {
+      "passed": true,
+      "count_present": 31,
+      "total_required": 31,
+      "missing": []
+    },
+    "figures": {
+      "passed": true,
+      "count_present": 14,
+      "total_required": 14,
+      "missing": []
+    },
+    "interactive_maps": {
+      "passed": true,
+      "count_present": 6,
+      "total_required": 6,
+      "missing": []
+    },
+    "study08_regression": {
+      "passed": true,
+      "rank": 8,
+      "columns": 8,
+      "condition_number": 59.17,
+      "r_squared": 0.6049,
+      "n": 26582,
+      "all_coefficients_finite": true
+    },
+    "study09_spearman": {
+      "passed": true,
+      "samples_evaluated": 4,
+      "correlations": {
+        "barcelona_All eligible": {
+          "n": 6801,
+          "rho": -0.0586
+        },
+        "barcelona_First review at least one year earlier": {
+          "n": 5185,
+          "rho": -0.1165
+        },
+        "madrid_All eligible": {
+          "n": 12255,
+          "rho": -0.0113
+        },
+        "madrid_First review at least one year earlier": {
+          "n": 8754,
+          "rho": -0.0047
+        }
+      }
+    },
+    "study06_geographic_joins": {
+      "passed": true,
+      "unmatched_neighbourhoods": 0,
+      "cities": [
+        "barcelona",
+        "madrid"
+      ]
+    },
+    "pdf_report": {
+      "passed": true,
+      "page_count": 21,
+      "page_budget_range": "15-22",
+      "file_size_bytes": 3501391,
+      "unresolved_references": []
+    }
+  }
+}

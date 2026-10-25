@@ -1,0 +1,11 @@
+city,neighbourhood_cleansed,listings,short_entire,share_pct,small_sample
+barcelona,Vilapicina i la Torre Llobeta,79,57,72.15189873417721,False
+barcelona,el Poble Sec,650,425,65.38461538461539,False
+barcelona,Diagonal Mar i el Front Marítim del Poblenou,119,77,64.70588235294117,False
+barcelona,la Sagrada Família,910,581,63.84615384615385,False
+barcelona,Sant Antoni,846,494,58.392434988179666,False
+madrid,Costillares,30,27,90.0,False
+madrid,Rejas,144,115,79.86111111111111,False
+madrid,Legazpi,44,35,79.54545454545455,False
+madrid,Orcasur,66,51,77.27272727272727,False
+madrid,San Juan Bautista,29,22,75.86206896551724,False

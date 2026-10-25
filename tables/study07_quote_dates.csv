@@ -1,0 +1,5 @@
+city_name,room_type,n,checkin_min,checkin_median,checkin_max,nights_min,nights_max
+Barcelona,Entire home/apt,3329,2026-06-24,2026-08-06,2027-06-01,28.0,35.0
+Barcelona,Private room,1627,2026-06-24,2026-07-25,2027-06-01,28.0,35.0
+Madrid,Entire home/apt,2175,2026-06-20,2026-07-25,2027-06-01,28.0,35.0
+Madrid,Private room,592,2026-06-20,2026-07-24,2027-06-01,28.0,35.0
